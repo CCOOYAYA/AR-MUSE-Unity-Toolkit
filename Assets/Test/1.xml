@@ -2,7 +2,7 @@
   <museum>
     <title>m</title>
     <subtitle>m</subtitle>
-    <author>mm</author>
+    <author>m</author>
     <version>m</version>
     <description>m</description>
     <link>m</link>
@@ -10,21 +10,12 @@
   <exhibit>
     <exhibit>
       <id>1</id>
-      <status>on</status>
+      <status>1</status>
       <title>1</title>
       <subtitle>1</subtitle>
       <author>1</author>
       <description>1</description>
       <fileName>1</fileName>
-    </exhibit>
-    <exhibit>
-      <id>2</id>
-      <status>on</status>
-      <title>2</title>
-      <subtitle>2</subtitle>
-      <author>2</author>
-      <description>2</description>
-      <fileName>2</fileName>
     </exhibit>
   </exhibit>
 </museum>
