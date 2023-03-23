@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEditor;
 using System;
 using System.Xml;
-using System.IO;
-using System.Text;
 
 public class XMLGenerator : EditorWindow
 {
@@ -109,6 +107,7 @@ public class XMLGenerator : EditorWindow
                     break;
                 // Exhibits toolbar area
                 case "Exhibits List":
+                    EditorGUILayout.HelpBox("Filename ends with .ab", MessageType.Info);
                     scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
                     serObj.Update();
                     EditorGUI.BeginChangeCheck();
@@ -178,6 +177,8 @@ public class XMLGenerator : EditorWindow
 
     private bool AnalyzeXML(XmlDocument xmlDoc)
     {
+        if (xmlDoc == null || xmlDoc.Equals(""))
+            return false;
         // Get root element
         XmlElement root = xmlDoc.DocumentElement;
         if (root.Name != "museum")
@@ -226,7 +227,7 @@ public class XMLGenerator : EditorWindow
                 }
             }
 
-            // Get others config
+            // Get others' config
             XmlNodeList exhibitNodeList = root.SelectSingleNode("exhibit").ChildNodes;
             for (int i = 0; i < exhibitNodeList.Count; i++)
             {
@@ -287,6 +288,7 @@ public class XMLGenerator : EditorWindow
         return element;
     }
 
+
     public class Museum
     {
         public string title;
@@ -322,7 +324,7 @@ public class XMLGenerator : EditorWindow
 
     public enum ExhibitStatus
     {
-        off,
         on,
+        off,
     }
 }
