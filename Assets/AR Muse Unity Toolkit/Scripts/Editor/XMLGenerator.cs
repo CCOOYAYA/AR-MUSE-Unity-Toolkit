@@ -25,7 +25,7 @@ public class XMLGenerator : EditorWindow
     string museumAuthor;
     string museumVersion;
     string museumDescription;
-    string museumLink;
+    string museumLink = "https://armuse.oss-us-west-1.aliyuncs.com/";
 
     // Exhibit
     [SerializeField]
@@ -128,7 +128,7 @@ public class XMLGenerator : EditorWindow
         {
             if (museumTitle != null && museumSubTitle != null && museumAuthor != null && museumVersion != null && museumDescription != null && museumLink != null)
             {
-                string path = EditorUtility.SaveFilePanel("Save config file", "", "", "xml");
+                string path = EditorUtility.SaveFilePanel("Save config file", "", "MUSETEST", "xml");
                 if (!(path == null || path == ""))
                 {
                     XmlDocument xml = new XmlDocument();
